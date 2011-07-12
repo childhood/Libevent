@@ -1310,6 +1310,14 @@ int event_base_gettimeofday_cached(struct event_base *base,
  */
 int event_base_update_cache_time(struct event_base *base);
 
+/** cleans up all resources allocated by libevent which are not controlled
+    by the developer.
+
+    This function should only be called once libevent is no longer needed, e.g.,
+    cleanly exiting a program..
+ */
+void libevent_shutdown(void);
+
 #ifdef __cplusplus
 }
 #endif
