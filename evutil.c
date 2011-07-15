@@ -2544,6 +2544,7 @@ evutil_eventfd_(unsigned initval, int flags)
 }
 
 void
-evutil_free_globals_(void) {
+evutil_free_globals_(void)
+{
 	evutil_free_secure_rng_globals_();
 }

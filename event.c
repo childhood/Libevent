@@ -3164,7 +3164,7 @@ event_free_globals(void)
 }
 
 void
-libevent_shutdown(void)
+libevent_global_shutdown(void)
 {
 	event_free_globals();
 }
