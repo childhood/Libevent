@@ -116,7 +116,7 @@ evutil_secure_rng_global_setup_locks_(const int enable_locks)
 static void
 evutil_free_secure_rng_globals_locks(void)
 {
-#ifndef _EVENT_DISABLE_THREAD_SUPPORT
+#ifndef EVENT__DISABLE_THREAD_SUPPORT
 	if (arc4rand_lock != NULL) {
 		EVTHREAD_FREE_LOCK(arc4rand_lock, 0);
 	}
