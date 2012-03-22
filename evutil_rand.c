@@ -50,11 +50,13 @@ evutil_secure_rng_init(void)
 	(void) arc4random();
 	return 0;
 }
+#ifndef EVENT__DISABLE_THREAD_SUPPORT
 int
 evutil_secure_rng_global_setup_locks_(const int enable_locks)
 {
 	return 0;
 }
+#endif
 
 static void
 ev_arc4random_buf(void *buf, size_t n)
@@ -110,7 +112,6 @@ evutil_secure_rng_global_setup_locks_(const int enable_locks)
 	EVTHREAD_SETUP_GLOBAL_LOCK(arc4rand_lock, 0);
 	return 0;
 }
-
 #endif
 
 static void

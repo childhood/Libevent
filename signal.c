@@ -460,13 +460,13 @@ evsig_free_globals_locks(void)
 	return;
 }
 
-#ifndef EVENT__DISABLE_THREAD_SUPPORT
 void
 evsig_free_globals_(void)
 {
 	evsig_free_globals_locks();
 }
 
+#ifndef EVENT__DISABLE_THREAD_SUPPORT
 int
 evsig_global_setup_locks_(const int enable_locks)
 {
